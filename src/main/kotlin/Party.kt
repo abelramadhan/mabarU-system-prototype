@@ -1,6 +1,5 @@
-class Party(val _game:Game) {
+class Party(val game:Game) {
     val id:String = generateUID()
-    val game:Game = _game
     val userList = mutableListOf<User>()
     val chatHistory = Chat(id)
 }

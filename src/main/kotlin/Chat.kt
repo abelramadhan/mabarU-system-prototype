@@ -1,4 +1,3 @@
-class Chat(val _id: String) {
-    val id :String = _id
+class Chat(val id: String) {
     val chatMessages = mutableListOf<Message>()
 }
