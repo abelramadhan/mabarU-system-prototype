@@ -1,1 +1,1 @@
-data class Game(val id:Int, val name:String, val maxPlayer: Int)
+data class Game(val id:String, val name:String, val maxPlayer: Int)

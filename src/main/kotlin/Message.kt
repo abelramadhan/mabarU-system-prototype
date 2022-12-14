@@ -1,10 +1,8 @@
+import java.text.SimpleDateFormat
 import java.time.Instant
 import java.time.format.DateTimeFormatter
+import java.util.*
 
-class Message(val _senderID:String, val _text:String) {
-    val senderID: String = _senderID
-    val text: String = _text
-    val timeStamp = DateTimeFormatter
-        .ofPattern("yyyy-MM-dd HH:mm:ss")
-        .format(Instant.now())
+class Message(val senderID:String, val text:String) {
+    val timeStamp: String = SimpleDateFormat("yyyyMMdd_HHmmss").format(Date())
 }

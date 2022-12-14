@@ -1,19 +1,17 @@
-class User(val _name: String) {
-    private var id: String
-    private var name: String
-    private var gameAccounts = mutableListOf<GameAccount>()
-    private var discordAccount: DiscordAccount? = null
-    private var chatHistory: Chat
-    private var currentPartyID: Int
+class User(val name: String) {
+    var id: String
+    var gameAccounts = mutableListOf<GameAccount>()
+    var discordAccount: DiscordAccount? = null
+    var chatHistory: Chat
+    var currentPartyID: String
 
     init {
         this.id = generateUID()
-        this.name = _name
         this.chatHistory = Chat(id)
-        this.currentPartyID = 0
+        this.currentPartyID = ""
     }
 
-    fun bindGameAccout(game:Game, nickname:String, rank:String) {
+    fun bindGameAccount(game:Game, nickname:String, rank:String) {
         val newGameAccount = GameAccount(this.id, game, nickname, rank)
         this.gameAccounts.add(newGameAccount)
     }
@@ -21,4 +19,6 @@ class User(val _name: String) {
     fun bindDiscordAccount(discordID:String, discordNickname:String, discordTagline:String) {
         this.discordAccount = DiscordAccount(discordID, discordNickname, discordTagline)
     }
+
+
 }
